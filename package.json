@@ -1,7 +1,8 @@
 {
     "name": "codeigniter-extension",
-    "displayName": "codeigniter extension",
-    "description": "",
+    "displayName": "Codeigniter artisan",
+    "description": "codeignter package for vcode",
+    "icon": "assets/icon.png",
     "version": "0.0.1",
     "publisher": "alshba7",
     "engines": {
@@ -20,8 +21,7 @@
     ],
     "main": "./extension",
     "contributes": {
-        "commands": [
-            {
+        "commands": [{
                 "command": "make.controller",
                 "title": " Codeigniter make:controller"
             },
