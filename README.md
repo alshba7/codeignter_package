@@ -1,14 +1,13 @@
+### codeignter package for vcode
 
-**Codeignter package for vcode**
 **Features**
- ~~1. creating controller~~
- ~~2. creating helper~~
- ~~3. creating htaccess~~
- ~~4. creating language~~
- ~~5. creating library~~ 
- ~~6. creating model~~
- 
+- creating controller file
+- creating helper file
+- creating model file
+- creating library  file
+- creating htaccess file
+- creating language file
 
- 
-**Don't repeat yourself and have some fun** 
-**written by Eslam hussien**
+> Don't repeat yourself and have some fun
+
+~~Writting by Eslam hussien
