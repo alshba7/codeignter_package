@@ -3,7 +3,7 @@
     "displayName": "Codeigniter artisan",
     "description": "codeignter package for vcode",
     "icon": "assets/icon.png",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "alshba7",
     "repository": "https://github.com/alshba7/codeignter_package",
     "engines": {

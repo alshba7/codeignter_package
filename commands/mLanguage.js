@@ -1,4 +1,4 @@
-var capitalize = require('./functions')('capitalize');
+var capitalize = require('./functions');
 const fsa = require("fs");
 module.exports = function(vscode, fs, path, pathdir) {
     vscode.window.showInputBox({
@@ -9,7 +9,7 @@ module.exports = function(vscode, fs, path, pathdir) {
             vscode.window.showErrorMessage("You should insert language name .");
 
         } else {
-            var pathlang = path.join(pathdir + "/application/language", capitalize(lang));
+            var pathlang = path.join(pathdir + "/application/language", lang);
             fs.access(pathlang, function(err) {
                 if (err) fsa.mkdirSync(pathlang);
 
@@ -23,7 +23,7 @@ module.exports = function(vscode, fs, path, pathdir) {
 
                     } else {
 
-                        var pathfile = path.join(pathdir + "/application/language", lang + '/' + val + "_lang") + ".php";
+                        var pathfile = path.join(pathdir + "/application/language", lang + '/' + capitalize.capitalize(val) + "_lang") + ".php";
                         fs.access(pathfile, function(err) {
                             if (!err) {
                                 vscode.window.showWarningMessage("Name of file already exists  !");

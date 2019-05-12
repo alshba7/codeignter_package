@@ -1,4 +1,4 @@
-var capitalize = require('./functions')('capitalize');
+var capitalize = require('./functions');
 module.exports = function(vscode, fs, path, pathdir) {
     vscode.window.showInputBox({
         prompt: "name of helper",
@@ -8,7 +8,7 @@ module.exports = function(vscode, fs, path, pathdir) {
             vscode.window.showErrorMessage("You should insert file name .");
 
         } else {
-            var pathfile = path.join(pathdir + "/application/helpers", capitalize(val) + "_helper") + ".php";
+            var pathfile = path.join(pathdir + "/application/helpers", capitalize.capitalize(val) + "_helper") + ".php";
             fs.access(pathfile, function(err) {
                 if (!err) {
                     vscode.window.showWarningMessage("Name of file already exists  !");
