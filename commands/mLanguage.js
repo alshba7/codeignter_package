@@ -1,3 +1,4 @@
+var capitalize = require('./functions')('capitalize');
 const fsa = require("fs");
 module.exports = function(vscode, fs, path, pathdir) {
     vscode.window.showInputBox({
@@ -8,7 +9,7 @@ module.exports = function(vscode, fs, path, pathdir) {
             vscode.window.showErrorMessage("You should insert language name .");
 
         } else {
-            var pathlang = path.join(pathdir + "/application/language", lang);
+            var pathlang = path.join(pathdir + "/application/language", capitalize(lang));
             fs.access(pathlang, function(err) {
                 if (err) fsa.mkdirSync(pathlang);
 

@@ -1,3 +1,5 @@
+var capitalize = require('./functions')('capitalize');
+
 module.exports = function(vscode, fs, path, pathdir) {
     vscode.window.showInputBox({
         prompt: "name of library",
@@ -7,7 +9,7 @@ module.exports = function(vscode, fs, path, pathdir) {
             vscode.window.showErrorMessage("You should insert file name .");
 
         } else {
-            var pathfile = path.join(pathdir + "/application/libraries", val) + ".php";
+            var pathfile = path.join(pathdir + "/application/libraries", capitalize(val)) + ".php";
             fs.access(pathfile, function(err) {
                 if (!err) {
                     vscode.window.showWarningMessage("Name of file already exists  !");
@@ -20,7 +22,7 @@ module.exports = function(vscode, fs, path, pathdir) {
                         fs.writeFileSync(fd, `<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
                         
-class ` + val + `
+class ` + capitalize(val) + `
 {
                         
 public function __construct()

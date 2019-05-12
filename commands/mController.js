@@ -1,3 +1,4 @@
+var capitalize = require('./functions')('capitalize');
 module.exports = function(vscode, fs, path, pathdir) {
 
     vscode.window.showInputBox({
@@ -8,7 +9,7 @@ module.exports = function(vscode, fs, path, pathdir) {
             vscode.window.showErrorMessage("You should insert file name .");
 
         } else {
-            var pathfile = path.join(pathdir + "/application/controllers", val) + ".php";
+            var pathfile = path.join(pathdir + "/application/controllers", capitalize(val)) + ".php";
             fs.access(pathfile, function(err) {
                 if (!err) {
                     vscode.window.showWarningMessage("Name of file already exists  !");
@@ -22,7 +23,7 @@ module.exports = function(vscode, fs, path, pathdir) {
         
 defined('BASEPATH') OR exit('No direct script access allowed');
         
-class ` + val + ` extends CI_Controller {
+class ` + capitalize(val) + ` extends CI_Controller {
 
 public function index()
 {
